@@ -2,7 +2,7 @@
 <div >
   <div class="row">
     <div class="col-md-4">
-      <!-- <login></login> -->
+      <login></login>
     </div>
     <div class="col-md-8">
       <table id="myTable" width="100%">
@@ -12,14 +12,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="message in messages">
             <td>
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">username @ date</h3>
+                  <h3 class="panel-title">{{ message.username }} @ {{ message.date | date-format}}</h3>
                 </div>
                 <div class="panel-body" >
-                  this is a test message
+                  {{ message.description }}
                 </div>
               </div>
             </td>
@@ -33,14 +33,14 @@
 </template>
 
 <script>
-  // import Vue from 'vue'
+  import Vue from 'vue'
   // import Login from './Login'
 
-  // Vue.filter('date-format', function (value) {
-  //   let date = value.split('T')[0];
-  //   let time = value.split('T')[1].split('+')[0].substring(0,5);
-  //   return date + " " + time;
-  // });
+  Vue.filter('date-format', function (value) {
+    let date = value.split('T')[0];
+    let time = value.split('T')[1].split('+')[0].substring(0,5);
+    return date + " " + time;
+  });
 
   export default {
         // components: { Login },
@@ -51,8 +51,7 @@
             // msg : 'main-panel',
             messages : ''
           }
-        }
-        , 
+        }, 
         created: function () {
           this.getMessages();
         },
