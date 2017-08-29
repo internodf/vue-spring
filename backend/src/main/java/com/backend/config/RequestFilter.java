@@ -1,4 +1,4 @@
-package com.backend.filter;
+package com.backend.config;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

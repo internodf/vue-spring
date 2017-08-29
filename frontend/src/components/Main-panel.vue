@@ -16,9 +16,9 @@
             <td>
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">{{ message.username }} @ {{ message.date | date-format}}</h3>
+                  <h3 class="panel-title text-left">{{ message.username }} @ {{ message.date | date-format}}</h3>
                 </div>
-                <div class="panel-body" >
+                <div class="panel-body text-left" >
                   {{ message.description }}
                 </div>
               </div>
@@ -34,7 +34,7 @@
 
 <script>
   import Vue from 'vue'
-  // import Login from './Login'
+  import Login from './Login'
 
   Vue.filter('date-format', function (value) {
     let date = value.split('T')[0];
@@ -43,7 +43,7 @@
   });
 
   export default {
-        // components: { Login },
+        components: { Login },
 
         name: 'main-panel',
         data () {

@@ -13,7 +13,7 @@
           </label>
         </div>
         <a class="btn btn-primary btn-block" @click="login">Sign in</a>
-        <a class="btn btn-danger btn-block" @click="googleUrl">Google +</a>
+        <!-- <a class="btn btn-danger btn-block" @click="googleUrl">Google +</a> -->
 
       </form><!-- /form -->
     </div>
@@ -22,7 +22,7 @@
       <a class="btn btn-warning" @click="logout">Logout</a>
       <br><br>
       <div>
-        <post-message></post-message>
+        <!-- <post-message></post-message> -->
       </div>
     </div>
   </div>
